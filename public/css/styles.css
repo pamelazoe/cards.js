@@ -1,0 +1,150 @@
+body {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    font-family: Poppins;
+    background-color: #eff4f7;
+}
+
+.title-section {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    color: rgb(46, 46, 46);
+    height: 3em;
+    align-items: center;
+}
+
+#deck {
+    padding: 2em 5em;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.card {
+    min-height: 4em;
+    min-width: 3em;
+    max-height: 4em;
+    max-width: 3em;
+    border-radius: 5px;
+    margin: 0.5em;
+    display: flex;
+    flex-flow: column;
+    background: #dbdbdb;
+    box-shadow: -22px 23px 30px rgba(189, 189, 189, 0.2), inset 1px 1px 6px #d0d0d0;
+    justify-content: space-between;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    flex-flow: initial;
+    overflow: hidden;
+}
+
+.card.♦,
+.card.♥ {
+    color: red;
+}
+
+.bottom-right {
+    display: flex;
+    transform: rotate(0.5turn);
+}
+
+.card>.bottom-right>.number,
+.card>.bottom-right>.symbol,
+.card>.top-left>.number,
+.card>.top-left>.symbol {
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-right,
+.top-left {
+    font-size: 0.6em;
+    display: flex;
+    flex-flow: column;
+    width: 20%;
+    height: 100%;
+}
+
+.card .symbols {
+    width: 60%;
+}
+
+#players-section {
+    display: flex;
+    flex-flow: wrap;
+    padding: 0 5em;
+    justify-content: center;
+}
+
+.hand-section {
+    width: 15em;
+    height: 18em;
+    background: #eff4f7;
+    box-shadow: -22px 23px 30px rgba(65, 65, 65, 0.2), inset 1px 0px 4px #D2D2D2;
+    margin: 1em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.user-deck {
+    height: 80%;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.username {
+    font-size: 1.2em;
+    margin: 0.5em;
+    color: #595959;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div[class$="2"] .symbols div:nth-child(1),
+div[class$="2"] .symbols div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+
+div[class$="2"] .symbols div:nth-child(2),
+div[class$="3"] .symbols div:nth-child(3) {
+    transform: rotate(0.5turn);
+}
+
+div[class$="3"] .symbols div:nth-child(1),
+div[class$="3"] .symbols div:nth-child(2),
+div[class$="3"] .symbols div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    height: 33%;
+}
+
+div[class$="3"] .symbols div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+}
+
+div[class$="4"] .symbols div:nth-child(3),
+div[class$="4"] .symbols div:nth-child(4) {
+    transform: rotate(0.5turn);
+}
+
+.card .card-corner .symbols .ace {
+    font-size: 30px;
+}
