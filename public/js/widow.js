@@ -7,7 +7,7 @@ const createCardDiv = att => {
     return cardDiv
 }
 
-const createCard = (card) => {
+const createCard = (card, flipped) => {
     const number = card.slice(0, -1);
     const symbol = card.slice(-1);
     const cardDiv = document.createElement("div")
@@ -39,6 +39,9 @@ const createCard = (card) => {
     </div>
     </div>
     `
+    if(flipped){
+        cardDiv.classList.add("flipped")
+    }
     cardDiv.addEventListener("click", () => {
         cardDiv.classList.contains("flipped") ?
         cardDiv.classList.remove("flipped") :
@@ -47,37 +50,26 @@ const createCard = (card) => {
     })
       return cardDiv
 }
-const createDeck = async({selector, path}) => {
+const createDeck = async({selector, path, flipped}) => {
     const container =document.querySelector(selector)
     const cards = await (await fetch(path)).json()
-    console.log(cards);
-    cards.map(card => container.append(createCard(card)))
+    cards.forEach((card, index) => container.append(createCard(card, (index < flipped))))
 }
 
-
-// cardClick.addEventListener("click", (e) => {
-//     e.preventDefault()
-//     console.log("clicked");
-// }, false)
 window.addEventListener("DOMContentLoaded", () => {
     (async () => {
         await createDeck({
             selector: ".deck.table",
-            path: "/table"
+            path: "/table",
+            flipped: 2
         })
         const deckSize = 2
         await createDeck({
             selector: ".deck.hand",
-            path: `/deck/${deckSize}`
-        })
-    //     const cardClick  = document.querySelectorAll(".card")
-    //     console.log(cardClick);
-    // cardClick.forEach((el,i) => {
-    // el.addEventListener("click", (e) => {
-    //         e.preventDefault()
-    //         console.log(`clicked ${i}`);
-    //     }, false)
-    // })
-    
+            path: `/deck/${deckSize}`,
+            flipped: deckSize
+        })  
+        
+        
     })()
 })
