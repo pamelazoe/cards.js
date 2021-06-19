@@ -1,0 +1,45 @@
+{
+    "version": 2,
+    "builds": [{
+            "src": "/api/index.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "/public/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "rewrites": [
+        { "source": "/", "destination": "/public/html/cards.html" },
+        { "source": "/cards", "destination": "/public/html/cards.html" },
+        { "source": "/widow", "destination": "/public/html/widow.html" },
+        {
+            "source": "/table",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/api/hold",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/fulldeck",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/deck/:size",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/withdraw",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/admin",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/set-username",
+            "destination": "/api/index.js"
+        }
+    ]
+}
