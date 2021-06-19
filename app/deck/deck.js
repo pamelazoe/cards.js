@@ -5,15 +5,14 @@ class Deck {
   cards = [];
 
   constructor() {
-    this.suits.forEach(suit => {
-      this.numbers.forEach(face => {
+    this.suits.map(suit => {
+      this.numbers.map(face => {
         this.cards.push(face + suit);
       });
     });
   }
 
   dispatchCards(size) {
-    // return
    if(this.cards.length >= size){
     return new Array(size)
       .fill()
@@ -21,21 +20,10 @@ class Deck {
    } 
     return this.fullDeck()
   }
-  // dispatchCards(size) {
-  //   // return
-  //  if(this.cards.length >= size){
-  //     const cards = new Array(size)
-  //     .fill()
-  //     .map(() =>this.cards.splice(parseInt(Math.random() * this.cards.length), 1)[0])
-  //   return  cards.reduce((acc, curr) =>  (acc[curr]='',acc),{})
-
-  //  } 
-  //   return this.fullDeck()
-  // }
   fullDeck() {
   this.cards = []
-  this.suits.forEach(suit => {
-    this.numbers.forEach(face => {
+  this.suits.map(suit => {
+    this.numbers.map(face => {
       this.cards.push(face + suit);
     });
   });
