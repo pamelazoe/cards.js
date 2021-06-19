@@ -379,3 +379,14 @@ h1 {
 .deck.table {
     width: 100%;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+button {
+    margin: 0 1em;
+    font-size: 1.2em;
+}
