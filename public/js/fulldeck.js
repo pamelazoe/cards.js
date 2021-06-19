@@ -26,7 +26,7 @@ const showDeck = deck => deck.map((card) => {
 
 window.addEventListener('DOMContentLoaded', () => {
 (async () => {
- const fetchDeck= await fetch("http://localhost:8000/fulldeck")
+ const fetchDeck= await fetch("/fulldeck")
  .then(data => data.json());
  console.log(fetchDeck);
  const cards = await showDeck(fetchDeck)

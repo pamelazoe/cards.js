@@ -37,7 +37,7 @@ const showHand = hand => hand.users.map(h => {
 
 window.addEventListener('load', () => {
 (async () => {
- const fetchDeck= await fetch("http://localhost:8000/game")
+ const fetchDeck= await fetch("/game")
  .then(data => data.json());
  console.log(fetchDeck);
  const deckValues = await Object.values(fetchDeck["cards"])

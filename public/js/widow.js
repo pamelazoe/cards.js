@@ -46,14 +46,18 @@ const createCard = (card, flipped) => {
         cardDiv.classList.contains("flipped") ?
         cardDiv.classList.remove("flipped") :
         cardDiv.classList.add("flipped")
-        console.log(cardDiv.classList);
     })
       return cardDiv
 }
 const createDeck = async({selector, path, flipped}) => {
     const container =document.querySelector(selector)
     const cards = await (await fetch(path)).json()
-    cards.forEach((card, index) => container.append(createCard(card, (index < flipped))))
+    console.log(cards);
+    cards.map((card, index) => container.append(createCard(card, (index < flipped))))
+}
+
+const buttonEvents = {
+    flip : async () => console.log((document.querySelectorAll(".deck.hand")))
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -61,15 +65,20 @@ window.addEventListener("DOMContentLoaded", () => {
         await createDeck({
             selector: ".deck.table",
             path: "/table",
-            flipped: 2
+            flipped:2
         })
         const deckSize = 2
         await createDeck({
             selector: ".deck.hand",
             path: `/deck/${deckSize}`,
-            flipped: deckSize
+            flipped:2
         })  
         
+        const {flip} = buttonEvents
+
+        document.getElementById("flip").addEventListener("click", () => {
+            flip()
+        })
         
     })()
 })
