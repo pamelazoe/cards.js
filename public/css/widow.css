@@ -5,15 +5,15 @@ body {
     transform: translateX(-50%);
     width: 100%;
     font-family: 'Fjalla One', sans-serif;
+    background-image: url("../assets/a19fe695998927.5ea4615ac25e7.jpg");
+    background-size: 2500px;
+    overflow: hidden;
 }
 
 h1,
 h2 {
     text-align: center;
-}
-
-body {
-    background-color: #eee;
+    font-family: 'Raleway', sans-serif;
 }
 
 h1 {
@@ -22,7 +22,7 @@ h1 {
 
 .card {
     /* background-color: #fff; */
-    border-radius: 10px;
+    border-radius: 7px;
     margin: 5px;
     width: 100px;
     height: 150px;
@@ -37,8 +37,7 @@ h1 {
 }
 
 .card .container {
-    box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 .card-corner {
@@ -337,28 +336,29 @@ h1 {
     background-size: 227px;
     background-position: 6.5% 44%;
     transform: rotateY(-0.5turn);
-    box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
+    box-shadow: -22px 23px 30px rgba(9, 9, 9, 0.1), inset 1px 1px 1px rgba(9, 9, 9, 0.1);
 }
 
 .container {
     width: 100%;
     height: 100%;
+    background-color: white;
 }
 
 .card .container {
     transform-origin: center left;
     transition: transform 0.5s ease-in;
     transform-style: preserve-3d;
+    box-shadow: -22px 23px 30px rgba(9, 9, 9, 0.1), inset 1px 1px 1px rgba(9, 9, 9, 0.1);
 }
 
 .front {
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: white;
+    /* background-color: white; */
     transform: rotateY(0turn);
     border-radius: 7px;
-    box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
 }
 
 .card .front {

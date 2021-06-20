@@ -57,7 +57,8 @@ const createDeck = async({selector, path, flipped}) => {
 }
 
 const buttonEvents = {
-    flip : async () => console.log((document.querySelectorAll(".deck.hand")))
+    flip : async () => document.querySelectorAll(".deck.hand .card.flipped").forEach((el, i) =>{
+        setTimeout(() => {el.classList.remove("flipped")}, (500 * (i)))})
 }
 
 window.addEventListener("DOMContentLoaded", () => {
