@@ -4,6 +4,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 h1,
@@ -20,18 +21,24 @@ h1 {
 }
 
 .card {
+    /* background-color: #fff; */
     border-radius: 10px;
     margin: 5px;
     width: 100px;
     height: 150px;
     display: inline-block;
     position: relative;
-    color: black;
+    color: #373737;
 }
 
 .card.♦,
 .card.♥ {
     color: red;
+}
+
+.card .container {
+    box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
+    border-radius: 10px;
 }
 
 .card-corner {
@@ -254,56 +261,56 @@ h1 {
 [class|="front ♠ J"],
 [class|="front ♠ Q"],
 [class|="front ♠ K"] {
-    background-image: url("../assets/Cards_Transparent.png");
-    background-size: 300px;
+    background-image: url("../assets/cards.png");
+    background-size: 516px;
 }
 
 [class|="front ♣ J"] {
-    background-position: 0% 100%;
+    background-position: 7% 97.4%;
 }
 
 [class|="front ♣ Q"] {
-    background-position: 50% 100%;
+    background-position: 48.8% 97.2%;
 }
 
 [class|="front ♣ K"] {
-    background-position: 99% 100%;
+    background-position: 91% 97%;
 }
 
 [class|="front ♦ J"] {
-    background-position: 1% 67%;
+    background-position: 7% 65.7%;
 }
 
 [class|="front ♦ Q"] {
-    background-position: 50% 67%;
+    background-position: 49% 65.6%;
 }
 
 [class|="front ♦ K"] {
-    background-position: 0% 67%;
+    background-position: 91% 65.9%;
 }
 
 [class|="front ♥ J"] {
-    background-position: 0% 33%;
+    background-position: 7% 34.2%;
 }
 
 [class|="front ♥ Q"] {
-    background-position: 50% 33%;
+    background-position: 49% 34.2%;
 }
 
 [class|="front ♥ K"] {
-    background-position: 99% 33%;
+    background-position: 91% 34.2%;
 }
 
 [class|="front ♠ J"] {
-    background-position: 1% 0%;
+    background-position: 7% 2.6%;
 }
 
 [class|="front ♠ Q"] {
-    background-position: 49% 0%;
+    background-position: 49% 2.7%;
 }
 
 [class|="front ♠ K"] {
-    background-position: 99% 0%;
+    background-position: 91% 2.7%;
 }
 
 #ace {
@@ -313,19 +320,22 @@ h1 {
 }
 
 .card .back {
-    height: calc(100% - 10px);
-    width: calc(100% - 10px);
-    background-color: white;
+    /* height: calc(100% - 10px);
+    width: calc(100% - 10px); */
+    height: 100%;
+    width: 100%;
+    background-color: #fff9e3;
     position: absolute;
-    margin: 5px;
+    /* margin: 5px; */
     top: 0;
     bottom: 0;
-    border-radius: 3px;
+    border-radius: 7px;
     overflow: hidden;
-    background-image: url("../assets/back.png");
-    background-size: 115px;
-    background-position: 54% 48%;
+    background-image: url("../assets/back2.png");
+    background-size: 227px;
+    background-position: 6.5% 44%;
     transform: rotateY(-0.5turn);
+    box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
 }
 
 .container {
@@ -346,6 +356,7 @@ h1 {
     background-color: white;
     transform: rotateY(0turn);
     border-radius: 7px;
+    box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
 }
 
 .card .front {

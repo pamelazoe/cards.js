@@ -29,7 +29,7 @@ h1 {
     height: 150px;
     display: inline-block;
     position: relative;
-    color: 373737;
+    color: #373737;
     box-shadow: -22px 23px 30px rgba(202, 200, 200, 0.23), inset 1px 1px 1px #CACACA75;
 }
 
@@ -48,6 +48,7 @@ h1 {
     /* font-family: monospace; */
     text-align: center;
     position: absolute;
+    line-height: 18px;
 }
 
 .top-left {
@@ -71,6 +72,10 @@ h1 {
 
 .card .symbols div {
     font-size: 25px;
+}
+
+.card .card-corner[class*="symbol"] {
+    line-height: 10px;
 }
 
 .card[class$="2"] .symbols div:nth-child(2),
