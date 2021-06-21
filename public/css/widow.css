@@ -7,6 +7,7 @@ body {
     font-family: 'Fjalla One', sans-serif;
     background-image: url("../assets/a19fe695998927.5ea4615ac25e7.jpg");
     background-size: 2500px;
+    background-position: 68% 3%;
     overflow: hidden;
 }
 
@@ -31,9 +32,14 @@ h1 {
     color: #373737;
 }
 
-.card.♦,
-.card.♥ {
-    color: red;
+.front.♦,
+.front.♥ {
+    color: #f55;
+}
+
+.front.♠,
+.front.♣ {
+    color: rgb(62, 60, 60);
 }
 
 .card .container {
@@ -46,7 +52,6 @@ h1 {
     text-align: center;
     position: absolute;
     font-size: 17px;
-    line-height: 18px;
 }
 
 .top-left {
@@ -134,7 +139,7 @@ h1 {
 .front[class$="8"] .symbols div:nth-child(2),
 .front[class$="8"] .symbols div:nth-child(5),
 .front[class$="9"] .symbols div:nth-child(9) {
-    top: 59px;
+    top: 56px;
 }
 
 .front[class$="4"] .symbols div:nth-child(1),
@@ -316,7 +321,7 @@ h1 {
 
 #ace {
     font-size: 60px !important;
-    top: 40px;
+    top: 29px;
     left: 33px;
 }
 
@@ -402,4 +407,50 @@ h1 {
 button {
     margin: 0 1em;
     font-size: 1.2em;
+}
+
+.front.♣.J>.card-corner.top-left,
+.front.♣.Q>.card-corner.top-left,
+.front.♣.K>.card-corner.top-left,
+.front.♦.J>.card-corner.top-left,
+.front.♦.Q>.card-corner.top-left,
+.front.♦.K>.card-corner.top-left,
+.front.♥.J>.card-corner.top-left,
+.front.♥.Q>.card-corner.top-left,
+.front.♥.K>.card-corner.top-left,
+.front.♠.J>.card-corner.top-left,
+.front.♠.Q>.card-corner.top-left,
+.front.♠.K>.card-corner.top-left {
+    left: 2px;
+}
+
+.front.♣.J>.card-corner.bottom-right,
+.front.♣.Q>.card-corner.bottom-right,
+.front.♣.K>.card-corner.bottom-right,
+.front.♦.J>.card-corner.bottom-right,
+.front.♦.Q>.card-corner.bottom-right,
+.front.♦.K>.card-corner.bottom-right,
+.front.♥.J>.card-corner.bottom-right,
+.front.♥.Q>.card-corner.bottom-right,
+.front.♥.K>.card-corner.bottom-right,
+.front.♠.J>.card-corner.bottom-right,
+.front.♠.Q>.card-corner.bottom-right,
+.front.♠.K>.card-corner.bottom-right {
+    right: 2px;
+}
+
+.front>.card-corner.top-left>.symbol {
+    position: relative;
+    top: -4px;
+}
+
+.front>.card-corner.bottom-right>div:nth-child(2) {
+    position: relative;
+    bottom: 4px;
+}
+
+.player {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

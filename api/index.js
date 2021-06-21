@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const cors = require('cors')
 const path = require("path")
+const port = 8000;
 const { Deck, Hand } = require('../app/deck/deck');
 
 const fullDeck = new Deck()
@@ -42,7 +43,7 @@ app.get("/fulldeck", (req, res) => {
 
 app.get("/table", (req, res) => {
   console.log(table);
-res.json(table)
+  res.json(table)
 })
 
 app.get("/deck/:size", (req, res) => {
@@ -67,21 +68,21 @@ app.get("/withdraw", (req, res) => {
 
 app.post("/set-username", (req, res) => {
   console.log(req.body);
-  const { user } = req.body;
-  users[user] = {
-    name: user,
-    lastLoginAt : parseInt(new Date(), 10)
-  }
-  res.json({ok: true})
+  let { user } = req.body;
+  user === "" ? user = "GuestId-" + Math.floor(Math.random() * 100) + 900 : user
+  Object.assign(users, {name:user, lastLoginAt : +(new Date())})
+  res.json(users)
+  console.log(users);
 })
 
 app.get("/admin", (req, res) => {
   res.json(users)
+  console.log(`Admin: ${JSON.stringify(users)}`);
 })
 
 
-app.listen(8000, () => {
-    console.log("Server running on port 8000");
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 })
 
 module.exports = app

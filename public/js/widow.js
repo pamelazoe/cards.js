@@ -61,6 +61,18 @@ const buttonEvents = {
         setTimeout(() => {el.classList.remove("flipped")}, (500 * (i)))})
 }
 
+const generateUsername = () => "GuestId-" + Math.floor(Math.random() * 100) + 900
+
+const newPlayer = async (username={}) => {
+    await fetch("/set-username", {
+        method: 'POST',
+        body: JSON.stringify(username),
+        headers: { 
+        'Content-Type': 'application/json'
+        }
+    }) 
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     (async () => {
         await createDeck({
